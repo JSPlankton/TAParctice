@@ -88,6 +88,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SkinLut:
+        m_Texture: {fileID: 2800000, guid: c2bb06f0971b7b94db90f035d1aa8de7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -136,6 +140,7 @@ Material:
     - _Rotate: 0
     - _RoughnessAdjust: 0.53
     - _Shininess: 0.01
+    - _SkinCurveOffset: 0.5
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecIntensity: 1

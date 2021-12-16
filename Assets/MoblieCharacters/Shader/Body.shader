@@ -7,12 +7,14 @@ Shader "JSU URP/Characters/Body"
         _BaseMap ("Base Map", 2D) = "white" {}
         _NormalMap ("Normal Map", 2D) = "white" {}
         _CompMask("CompMask(RM)", 2D) = "bump" {}
+        _SkinLut("Skin Lut", 2D) = "white" {}
         [Space(20)]
         [Header(Material Paramters)]
         [Space]
         _SpecShininess ("Spec Shininess", Float) = 10
         _RoughnessAdjust("Roughness Adjust", Range(-1,1)) = 0.0
         _MetalAdjust("Metal Adjust", Range(-1,1)) = 0.0
+        _SkinCurveOffset("Skin Curve Offset", Range(-1,1)) = 0.5
         [Space(20)]
         [Header(IBL)]
         [Space]
@@ -73,9 +75,11 @@ Shader "JSU URP/Characters/Body"
             SAMPLER(sampler_NormalMap);
             TEXTURE2D(_CompMask);
             SAMPLER(sampler_CompMask);
+            TEXTURE2D(_SkinLut);
+            SAMPLER(sampler_SkinLut);
             TEXTURECUBE(_EnvMap);
             SAMPLER(sampler_EnvMap);
-
+            
             CBUFFER_START(UnityPerMaterial)
             half4 _BaseMap_ST;
 
@@ -85,6 +89,7 @@ Shader "JSU URP/Characters/Body"
 
             float4 _EnvMap_HDR;
             float _Expose;
+            float _SkinCurveOffset;
 
             half4 custom_SHAr;
             half4 custom_SHAg;
@@ -161,6 +166,9 @@ Shader "JSU URP/Characters/Body"
                 //金属的高光颜色 : lerp(a,b,w) 根据w返回 a和b的插值
                 half3 spec_color = lerp(0.04, albedo_color.rgb, metal);
 
+                //皮肤区域
+                half skin_area = 1.0 - comp_mask.b;
+
                 //法线-NormalMap
                 half4 normal_map = SAMPLE_TEXTURE2D(_NormalMap, sampler_NormalMap, input.texcoord);
                 half3 normalData = UnpackNormal(normal_map);
@@ -181,10 +189,15 @@ Shader "JSU URP/Characters/Body"
                 half3 light_dir = SafeNormalize(mainLight.direction);
       
                 //直接光漫反射 NdotL-Diffuse
-                half NdotL = dot(normal_dir, light_dir);
-                half diff_term = max(0.0, NdotL);
-                half3 direct_diffuse = diff_term * mainLight.color * mainLight.shadowAttenuation * base_color.xyz;
+                half diff_term = max(0.0, dot(normal_dir, light_dir));
+                half3 common_diffuse = diff_term * mainLight.color * mainLight.shadowAttenuation * base_color.xyz;
                 
+                //皮肤区域漫反射
+                half2 uv_lut = half2(diff_term, _SkinCurveOffset);
+                half4 skin_lut_color = SAMPLE_TEXTURE2D(_SkinLut, sampler_SkinLut, uv_lut);
+                half3 sss_diffuse = skin_lut_color * mainLight.color * mainLight.shadowAttenuation * base_color.xyz;
+                half3 direct_diffuse = lerp(common_diffuse, sss_diffuse, skin_area);
+
                 //Bling-Phong直接光的镜面反射 NdotH-Specular
                 half3 half_dir = SafeNormalize(light_dir + view_dir);
                 half NdotH = dot(normal_dir, half_dir);
