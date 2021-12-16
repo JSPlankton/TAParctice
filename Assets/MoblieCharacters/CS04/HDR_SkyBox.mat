@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4992349785160679733
+--- !u!114 &-1330331001863331993
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,9 +20,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Body
-  m_Shader: {fileID: 4800000, guid: 703acc8d1f566574883c6e0859f2af13, type: 3}
-  m_ShaderKeywords: _AdditionalLights
+  m_Name: HDR_SkyBox
+  m_Shader: {fileID: 103, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -32,20 +32,12 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _AOMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 915a2f767b0984f4f976927ba1d499c2, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _CompMask:
-        m_Texture: {fileID: 2800000, guid: 3cf96f3d8881b4a4894f75799acb25bf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -64,20 +56,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _EnvMap:
-        m_Texture: {fileID: 8900000, guid: d8d955fbaec0b104391a7f05d8654103, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: ff319aca18551bf4b842370b70f41aea, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -92,8 +76,8 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SpecMaskMap:
-        m_Texture: {fileID: 0}
+    - _Tex:
+        m_Texture: {fileID: 8900000, guid: de64abf9dba035647ab0004b43eb4eb1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -110,7 +94,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AddLights: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -122,41 +105,27 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Expose: 1
+    - _Exposure: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _MetalAdjust: 0.5
     - _Metallic: 0
-    - _NormalIntensity: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Rotate: 0
-    - _RoughnessAdjust: 0.53
-    - _Shininess: 0.01
+    - _Rotation: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SpecIntensity: 1
-    - _SpecShininess: 10
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _AmbientColor: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Tint: {r: 1, g: 1, b: 1, a: 1}
-    - custom_SHAb: {r: -0.18365182, g: 0.6297483, b: -0.2300002, a: 0.63766086}
-    - custom_SHAg: {r: -0.18370582, g: 0.62989, b: -0.23026603, a: 0.63514364}
-    - custom_SHAr: {r: -0.1837312, g: 0.6300452, b: -0.23038556, a: 0.6343273}
-    - custom_SHBb: {r: -0.21706244, g: -0.2543205, b: -0.18468283, a: 0.16371511}
-    - custom_SHBg: {r: -0.21726787, g: -0.2545698, b: -0.18500572, a: 0.16391872}
-    - custom_SHBr: {r: -0.21736246, g: -0.2546683, b: -0.18510526, a: 0.16399992}
-    - custom_SHC: {r: -0.1900665, g: -0.18997574, b: -0.18970561, a: 1}
+    - _Tint: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
   m_BuildTextureStacks: []
