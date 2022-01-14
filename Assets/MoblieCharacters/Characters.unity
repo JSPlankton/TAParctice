@@ -545,13 +545,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -180680680270299331, guid: 19e31c194f6e8c343ba08b3befc66baa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 19e31c194f6e8c343ba08b3befc66baa, type: 3}
       propertyPath: m_Name
       value: Lethe
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590786393599871952, guid: 19e31c194f6e8c343ba08b3befc66baa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5470345942911484053, guid: 19e31c194f6e8c343ba08b3befc66baa, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 356186df363d8d94d813370d89a9b6f1, type: 2}
+    - target: {fileID: 8307298112933248600, guid: 19e31c194f6e8c343ba08b3befc66baa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19e31c194f6e8c343ba08b3befc66baa, type: 3}
