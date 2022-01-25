@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sky
+  m_Shader: {fileID: 4800000, guid: c45f281708ace9847bf776301d6939ba, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2888
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _NebulaTex:
+        m_Texture: {fileID: 2800000, guid: 39302b5e80781ea43b4175b991b083f9, type: 3}
+        m_Scale: {x: 8, y: 2}
+        m_Offset: {x: 1, y: 1}
+    - _NebulaTex1:
+        m_Texture: {fileID: 2800000, guid: 39302b5e80781ea43b4175b991b083f9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseMask:
+        m_Texture: {fileID: 2800000, guid: efccf27a2e7dd4a4c9a7b81f565bc7df, type: 3}
+        m_Scale: {x: 16, y: 4}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseMask1:
+        m_Texture: {fileID: 2800000, guid: efccf27a2e7dd4a4c9a7b81f565bc7df, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaCutoff: 0.5
+    - _GrayPower: 5
+    - _Intensity: 1
+    - _Intensity1: 0.62
+    - _StarIntensity: 10
+    - _StarIntensity1: 8.79
+    - _TessEdgeLength: 16
+    - _TessMax: 25
+    - _TessMaxDisp: 25
+    - _TessMin: 10
+    - _TessPhongStrength: 0.5
+    - _TessValue: 16
+    - _TransAmbient: 0.1
+    - _TransDirect: 0.9
+    - _TransNormal: 0.5
+    - _TransScattering: 2
+    - _TransShadow: 0.5
+    - _TransStrength: 1
+    - _TransmissionShadow: 0.5
+    - __dirty: 1
+    m_Colors:
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FogColor: {r: 0.0039215437, g: 0.813429, b: 0.96078426, a: 0}
+    - _FogColor1: {r: 0.7830188, g: 0.27701136, b: 0.27701136, a: 0}
+    - _NoiseSpeed: {r: 0.15, g: -0.1, b: 0, a: 0}
+    - _NoiseSpeed1: {r: 3.44, g: 1.17, b: 1.2, a: 0}
+    - _SkyFogOffset: {r: 0, g: 2, b: 0, a: 0}
+    - _SkyFogOffset1: {r: 0, g: 2, b: 0, a: 0}
+  m_BuildTextureStacks: []

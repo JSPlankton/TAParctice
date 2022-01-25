@@ -1,0 +1,24 @@
+// 指定要编译的函数,在C#可被指定调用
+#pragma kernel CSMain
+
+RWTexture2D<float4> _Ret;       //声明一张可读写texture
+Texture2D<float4> _Src;         //声明一张可读不可写texture
+
+float _Bright;                  //明暗度值
+float _Saturate;                //饱和度值
+float _Constrast;               //对比度值
+
+[numthreads(8,8,1)]             //一个线程组里的线程排序(x:水平方向线程数 y:垂直方向线程数 z:维度方向线程数)
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    _Ret[id.xy] = _Src[id.xy];
+    //明度计算
+    _Ret[id.xy] *= _Bright;
+    //灰度计算
+    float gray = _Ret[id.xy].x * 0.21 + _Ret[id.xy].y * 0.71 + _Ret[id.xy].z * 0.08;
+    //饱和度计算
+    _Ret[id.xy] = lerp(float4(gray, gray, gray, 1), _Ret[id.xy], _Saturate);
+    //对比度计算
+    _Ret[id.xy] = lerp(float4(0.5, 0.5, 0.5, 1), _Ret[id.xy], _Constrast);
+
+}

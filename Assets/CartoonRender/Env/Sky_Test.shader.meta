@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 9617b29344677484ebdd162593eaa1fa
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _NoiseMask: {fileID: 2800000, guid: efccf27a2e7dd4a4c9a7b81f565bc7df, type: 3}
+  - _NebulaTex: {fileID: 2800000, guid: 39302b5e80781ea43b4175b991b083f9, type: 3}
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
