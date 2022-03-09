@@ -12,7 +12,6 @@ namespace JSRender
         public ClampedIntParameter rtSize = new ClampedIntParameter(512, 128, 720, false);
         public FloatParameter reflectHeight = new FloatParameter(0.2f, false);
         public ClampedFloatParameter fadeOutRange = new ClampedFloatParameter(0.3f, 0.0f, 1.0f, false);
-
         public bool IsActive() => on.value;
         public bool IsTileCompatible() => false;
     }

@@ -16,7 +16,7 @@ MonoBehaviour:
   m_ScriptableSettings:
     RenderPassName: JSRender Compute ColorAdjust
     CShader: {fileID: 7200000, guid: 06e84d60f7d95ca4d9e43147d259f77e, type: 3}
-    Satureate: 1.5
+    Satureate: 1
     Bright: 1
     Constrast: 1
     RenderPassEvent: 500
@@ -72,4 +72,4 @@ MonoBehaviour:
   m_AccurateGbufferNormals: 1
   m_ClusteredRendering: 0
   m_TileSize: 32
-  m_IntermediateTextureMode: 0
+  m_IntermediateTextureMode: 1
